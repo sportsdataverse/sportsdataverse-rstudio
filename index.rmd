@@ -4,10 +4,10 @@ author: "Saiem Gilani"
 date: "2022-06-28"
 opengraph:
   image: 
-    src: "https://raw.githubusercontent.com/saiemgilani/The_SportsDataverse_Initiative/main/figures/sdv-blue.png"
+    src: "https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-rstudio/main/figures/sdv-blue.png"
   twitter:
     site: "@sportsdataverse"
-    card: summary
+    card: summary_large_image
     creator: "@saiemgilani"
 output:
   xaringan::moon_reader:
