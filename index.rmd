@@ -82,7 +82,7 @@ style_mono_light(
 
 The topic of our conversation will be centered around how the SportsDataverse developer group is trying to build lasting solutions for accessing sports data and analytics. 
 
-<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' width="90%" min-width="100px" /></a>
+<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' width="50%" min-width="100px" /></a>
 
 **Slide Link**: [`slides.sportsdataverse.org/`](https://slides.sportsdataverse.org/)
 
