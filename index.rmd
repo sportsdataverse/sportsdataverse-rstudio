@@ -82,7 +82,9 @@ style_mono_light(
 
 The topic of our conversation will be centered around how the SportsDataverse developer group is trying to build lasting solutions for accessing sports data and analytics. 
 
-**Slide Link**: [`saiemgilani.github.io/SportsDataverse-RStudio/`](https://saiemgilani.github.io/SportsDataverse-RStudio/)
+<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' width="90%" min-width="100px" /></a>
+
+**Slide Link**: [`slides.sportsdataverse.org/`](https://slides.sportsdataverse.org/)
 
 **The Goals**
 * Creating open-source sports data resources for the community 
@@ -129,7 +131,7 @@ ML Engineer by trade, currently working for the Houston Rockets as the Director 
 
 ### The SportsDataverse Initiative `r emo::ji("light_bulb")` 
 
-"...*the idea was to bring together a group of remarkable people, to see if they could become something more. To see if they could work together when we needed them to -- to scrape the data we never could.*"
+"...*the idea was to bring together a group of remarkable people, to see if they could become something more. To see if they could work together when we needed them to -- to scrape the data we never could.*"-
  
  .pull-right[~ *Nick FuRy* 
  <br>]
@@ -232,28 +234,36 @@ cfb_pbp <- cfbfastR::load_cfb_pbp(2021)
 ```
 
 ---
-## PBP Loading 
+## Loading 
  - Season-level from data repo
  
 ### Men's College Basketball
 ```{r hoopR_load_mbb, eval = TRUE, out.width = "40%", echo = TRUE}
 mbb_pbp <- hoopR::load_mbb_pbp(2021)
+mbb_team_box <- hoopR::load_mbb_team_box(2021)
+mbb_player_box <- hoopR::load_mbb_player_box(2021)
 ```
 
 ### Women's College Basketball
 ```{r wehoop_load_wbb, eval = TRUE, out.width = "40%", echo = TRUE}
 wbb_pbp <- wehoop::load_wbb_pbp(2021)
+wbb_team_box <- wehoop::load_wbb_team_box(2021)
+wbb_player_box <- wehoop::load_wbb_player_box(2021)
 ```
 
 --
 ### NBA
 ```{r hoopR_load_nba, eval = TRUE, out.width = "40%", echo = TRUE}
 nba_pbp <- hoopR::load_nba_pbp(2021)
+nba_team_box <- hoopR::load_nba_team_box(2021)
+nba_player_box <- hoopR::load_nba_player_box(2021)
 ```
 
 ### WNBA
 ```{r wehoop_load_wnba, eval = TRUE, out.width = "40%", echo = TRUE}
 wnba_pbp <- wehoop::load_wnba_pbp(2021)
+wnba_team_box <- wehoop::load_wnba_team_box(2021)
+wnba_player_box <- wehoop::load_wnba_player_box(2021)
 ```
 
 ---
@@ -263,17 +273,21 @@ wnba_pbp <- wehoop::load_wnba_pbp(2021)
 ### NHL
 ```{r fastRhockey_load_nhl, eval = TRUE, out.width = "40%", echo = TRUE}
 nhl_pbp <- fastRhockey::load_nhl_pbp(2021)
+nhl_team_box <- fastRhockey::load_nhl_team_box(2021)
+nhl_player_box <- fastRhockey::load_nhl_player_box(2021)
 ```
 
 ### PHF 
  - Premier Hockey Federation
 ```{r fastRhockey_load_phf, eval = TRUE, out.width = "40%", echo = TRUE}
 phf_pbp <- fastRhockey::load_phf_pbp(2021)
+phf_team_box <- fastRhockey::load_phf_team_box(2021)
+phf_player_box <- fastRhockey::load_phf_player_box(2021)
 ```
 
 ---
 ## SportsDataverse Packages
-### R <a href="https://www.r-project.org/" target="_blank" alt="R"> <img src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg" alt="R" width="40" height="40"/> </a>
+### R <a href="https://r.sportsdataverse.org/" target="_blank" alt="R"> <img src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg" alt="R" width="40" height="40"/> </a>
 
 | **Package**  | **Sports Leagues**  | **Repository** | **Author(s)**  |
 | :-- | :-- | :-- | :-- |
