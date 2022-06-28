@@ -237,7 +237,10 @@ cfb_pbp <- cfbfastR::load_cfb_pbp(2021)
 ---
 ## Loading 
  - Season-level from data repo
- 
+   * Play-by-Play 
+   * Team Boxscore
+   * Player Boxscore
+   
 ### Men's College Basketball
 ```{r hoopR_load_mbb, eval = TRUE, out.width = "40%", echo = TRUE}
 mbb_pbp <- hoopR::load_mbb_pbp(2021)
@@ -253,6 +256,12 @@ wbb_player_box <- wehoop::load_wbb_player_box(2021)
 ```
 
 ---
+## Loading 
+ - Season-level from data repo
+   * Play-by-Play 
+   * Team Boxscore
+   * Player Boxscore
+ 
 ### NBA
 ```{r hoopR_load_nba, eval = TRUE, out.width = "40%", echo = TRUE}
 nba_pbp <- hoopR::load_nba_pbp(2021)
@@ -268,8 +277,11 @@ wnba_player_box <- wehoop::load_wnba_player_box(2021)
 ```
 
 ---
-## PBP Loading 
+## Loading 
  - Season-level from data repo
+   * Play-by-Play 
+   * Team Boxscore
+   * Player Boxscore
  
 ### NHL
 ```{r fastRhockey_load_nhl, eval = TRUE, out.width = "40%", echo = TRUE}
