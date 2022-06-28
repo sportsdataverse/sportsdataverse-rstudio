@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The SportsDataverse Initiative</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Saiem Gilani" />
+    <meta name="date" content="2022-06-28" />
+    <script src="index_files/header-attrs-2.14/header-attrs.js"></script>
+    <link rel="stylesheet" href="sdv-xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# The SportsDataverse Initiative
+]
+.author[
+### Saiem Gilani
+]
+.date[
+### 2022-06-28
+]
+
+---
+
+
+
+
+
+
+
+
+
+
+  ## Overview
+
+The topic of our conversation will be centered around how the SportsDataverse developer group is trying to build lasting solutions for accessing sports data and analytics. 
+
+**Slide Link**: [`saiemgilani.github.io/SportsDataverse-RStudio/`](https://saiemgilani.github.io/SportsDataverse-RStudio/)
+
+**The Goals**
+* Creating open-source sports data resources for the community 
+* Making the sports analytics industry more diverse, inclusive, and accessible
+
+--
+
+**Some Solutions**
+
+--
+
+* Building an extensive set of open-source sports data repositories
+--
+
+* Create packages to access the data in Python, R, and Node.js
+--
+
+* Establish the bench of developers from diverse backgrounds to spearhead projects and make contributions
+--
+
+* Create new resources for women's sports to spur reproducible research. 
+
+---
+
+### First Things First
+
+Saiem Gilani - Lead Engineer of the SportsDataverse&lt;br&gt;&lt;a href='https://twitter.com/saiemgilani' target='blank'&gt;&lt;img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;amp;label=%40saiemgilani&amp;amp;logo=twitter&amp;amp;style=for-the-badge' alt='@saiemgilani'/&gt;&lt;/a&gt; &lt;a href='https://github.com/saiemgilani' target='blank'&gt;&lt;img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;amp;logo=Github&amp;amp;style=for-the-badge' alt='@saiemgilani'/&gt;&lt;/a&gt;
+
+--
+
+#### What I do
+
+ML Engineer by trade, currently working for the Houston Rockets as the Director of Data Science &amp; Engineering. 
+
+--
+
+#### How I got into open-source sports analytics
+
+* Working as an analytics contributor with the folks at [TomahawkNation](https://www.tomahawknation.com/), the FSU SBNation site covering my hometown Seminoles
+
+* Started contributing on my first open-source sports project, `cfbscrapR`, in early 2020
+
+---
+
+### The SportsDataverse Initiative 💡 
+
+"...*the idea was to bring together a group of remarkable people, to see if they could become something more. To see if they could work together when we needed them to -- to scrape the data we never could.*"
+ 
+ .pull-right[~ *Nick FuRy* 
+ &lt;br&gt;]
+&lt;br&gt;
+&lt;br&gt;
+I had a thought I am sure many of the long-standing members of the sports analytics community has had.
+
+  * *what if getting sports data for analysis was easy?*
+
+  * *what if we worked together to build the data infrastructure for research?*
+  
+  * *how much further would we get?*
+    
+---
+
+### What the SportsDataverse is:
+
+* An organization trying to make the sports data and analytics industry more diverse, inclusive, and accessible by providing high-quality resources for end-users and opportunities for practical code skill development for those that join the effort  
+   💡 + 💻 + 📈 
+   
+--
+
+* A community of developers committed to developing and maintaining open-source sports data packages and pipelines as on-going public utilities   
+   👥 + 💬 + 👩‍💻 + 📦
+
+--
+
+* A set of packages for loading and scraping sports data in R, Python, and Node.js with focus placed on play-by-play data  
+&lt;a href="https://r.sportsdataverse.org/" target="_blank" alt="R"&gt; &lt;img src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg" alt="R" width="40" height="40"/&gt; &lt;/a&gt;  + &lt;a href="https://py.sportsdataverse.org" alt="Saiem's Python Packages" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/&gt; &lt;/a&gt; + &lt;a href="https://js.sportsdataverse.org" target="_blank"&gt; &lt;img src="figures/nodejs.png" alt="nodejs" width="60" height="50"/&gt; &lt;/a&gt; 
+
+--
+
+* A set of corresponding data repositories which allow fast loading of the data for users and collectively form one of the largest open-source sports data resources with **over 250Gb of data produced** from the packages I contribute to   
+   🔑 + 👑
+   
+---
+### Function (naming) follows form
+
+* Function names indicate the data source.
+  - If the function starts with `load_`, `build_`, or `update_`, the data is coming from the data repository
+  - Otherwise, it will be an abbreviation for the website supplying the data (i.e. `espn_`, `nba_`, `ncaa_`) for most other external functions
+
+.split-left[
+#### Common Scraper&lt;br&gt; Package Design
+&lt;img src="https://raw.githubusercontent.com/saiemgilani/The_SportsDataverse_Initiative/main/figures/api-scraper.png" width="47%" /&gt;
+&lt;br&gt;
+]
+.split-right[
+#### SportsDataverse Package Design
+&lt;img src="https://raw.githubusercontent.com/saiemgilani/The_SportsDataverse_Initiative/main/figures/api-datastore.png" width="47%" /&gt;
+&lt;br&gt;
+]
+---
+### Package Installation
+
+Let's try out a few of the packages I have written for a quick walk-through of how the functions work.
+
+We will be working with `cfbfastR`, `hoopR`, and `wehoop`, `fastRhockey` and `baseballr`. I prefer the `pacman` package for easy package loading and installation:
+
+```r
+install.packages(c(
+  'cfbfastR', 
+  'hoopR', 
+  'wehoop', 
+  'fastRhockey', 
+  'baseballr'),
+  repos = c("https://cloud.r-project.org"))
+```
+
+---
+
+## PBP Loading 
+ - Season-level from data repo
+ - Available for `cfbfastR`, `hoopR`, `wehoop`, `fastRhockey` (unavailable for `baseballr` at present)
+ 
+### Load the Libraries
+
+```r
+library(cfbfastR)
+library(hoopR)
+library(wehoop)
+library(fastRhockey)
+library(baseballr)
+```
+--
+### College Football 
+
+
+```r
+cfb_pbp &lt;- cfbfastR::load_cfb_pbp(2021)
+```
+
+### NFL
+
+```r
+# go use the nflverse, wyd
+```
+
+---
+## PBP Loading 
+ - Season-level from data repo
+ 
+### Men's College Basketball
+
+```r
+mbb_pbp &lt;- hoopR::load_mbb_pbp(2021)
+```
+
+### Women's College Basketball
+
+```r
+wbb_pbp &lt;- wehoop::load_wbb_pbp(2021)
+```
+
+--
+### NBA
+
+```r
+nba_pbp &lt;- hoopR::load_nba_pbp(2021)
+```
+
+### WNBA
+
+```r
+wnba_pbp &lt;- wehoop::load_wnba_pbp(2021)
+```
+
+---
+## PBP Loading 
+ - Season-level from data repo
+ 
+### NHL
+
+```r
+nhl_pbp &lt;- fastRhockey::load_nhl_pbp(2021)
+```
+
+### PHF 
+ - Premier Hockey Federation
+
+```r
+phf_pbp &lt;- fastRhockey::load_phf_pbp(2021)
+```
+
+---
+## SportsDataverse Packages
+### R &lt;a href="https://www.r-project.org/" target="_blank" alt="R"&gt; &lt;img src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg" alt="R" width="40" height="40"/&gt; &lt;/a&gt;
+
+| **Package**  | **Sports Leagues**  | **Repository** | **Author(s)**  |
+| :-- | :-- | :-- | :-- |
+| cfbfastR | College Football | [GitHub][25] - [Docs][26] | Saiem Gilani, Akshay Easwaran, Jared Lee, Eric Hess |
+| hoopR | NBA and Men’s College Basketball | [GitHub][1] - [Docs][2] | Saiem Gilani |
+| wehoop | WNBA and Women’s College Basketball | [GitHub][3] - [Docs][4] | Saiem Gilani and Geoff Hutchinson |
+| baseballr | MLB, MiLB, NCAA Baseball | [GitHub][9] - [Docs][10] | Bill Petti and Saiem Gilani |
+| fastRhockey | Premier Hockey Federation | [GitHub][13] - [Docs][14] | Ben Howell and Saiem Gilani |
+| worldfootballR | EPL, La Liga, Bundesliga, Serie A, Ligue 1, RFPL | [GitHub][7] - [Docs][8] | Jason Zivkovic |
+| cfbplotR | College Sports visualizations | [GitHub][17] - [Docs][18] | Jared Lee |
+| cfb4th | College Football Modeling  | [GitHub][19] - [Docs][20] | Jared Lee |
+| gamezoneR | Men’s and Women’s College Basketball | [GitHub][5] - [Docs][6] | Jack Lichtenstein |
+| puntr | NFL and College Football | [GitHub][21] - [Docs][22] | Dennis Brookner and Raphael LadenGuindon |
+| recruitR | Men’s College Sports Recruiting | [GitHub][23] - [Docs][24] | Saiem Gilani and Ryan Mann |
+
+  [25]: https://github.com/sportsdataverse/cfbfastR
+  [26]: https://cfbfastR.sportsdataverse.org
+  [1]: https://github.com/sportsdataverse/hoopR
+  [2]: https://hoopR.sportsdataverse.org
+  [3]: https://github.com/sportsdataverse/wehoop
+  [4]: https://wehoop.sportsdataverse.org
+  [5]: https://github.com/jacklich10/gamezoneR
+  [6]: https://jacklich10.github.io/gamezoneR/
+  [7]: https://github.com/JaseZiv/worldfootballR
+  [8]: https://jaseziv.github.io/worldfootballR
+  [9]: https://github.com/BillPetti/baseballr
+  [10]: https://BillPetti.github.io/baseballr
+  [13]: https://github.com/sportsdataverse/fastRhockey
+  [14]: https://fastRhockey.sportsdataverse.org
+  [17]: https://github.com/sportsdataverse/cfbplotR
+  [18]: https://cfbplotR.sportsdataverse.org
+  [19]: https://github.com/sportsdataverse/cfb4th
+  [20]: https://cfb4th.sportsdataverse.org
+  [21]: https://github.com/Puntalytics/puntr
+  [22]: https://puntalytics.github.io/puntr/
+  [23]: https://github.com/sportsdataverse/recruitR
+  [24]: https://recruitR.sportsdataverse.org
+  
+---
+### Thank you
+
+* The seriously awesome community of developers that helps build and maintain resources 
+* All y'all for listening in 
+
+### Learn more
+
+* [`sportsdataverse`.org](https://www.sportsdataverse.org/) 
+&lt;a href='https://twitter.com/sportsdataverse' target='blank'&gt;&lt;img src='https://img.shields.io/twitter/follow/sportsdataverse?color=blue&amp;amp;label=%40SportsDataverse&amp;amp;logo=twitter&amp;amp;style=for-the-badge' alt='@sportsdataverse'/&gt;&lt;/a&gt;
+
+* [Game on Paper](https://gameonpaper.com/cfb/) - for a look at the `sportsdataverse` python package serving live advanced stats with expected points and win probability metrics.
+
+&lt;a href='https://twitter.com/saiemgilani' target='blank'&gt;&lt;img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;amp;label=%40saiemgilani&amp;amp;logo=twitter&amp;amp;style=for-the-badge' alt='@saiemgilani'/&gt;&lt;/a&gt; &lt;a href='https://github.com/saiemgilani' target='blank'&gt;&lt;img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;amp;logo=Github&amp;amp;style=for-the-badge' alt='@saiemgilani'/&gt;&lt;/a&gt;
+
+### Questions?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
