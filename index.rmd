@@ -82,10 +82,11 @@ style_mono_light(
 
 The topic of our conversation will be centered around how the SportsDataverse developer group is trying to build lasting solutions for accessing sports data and analytics. 
 
-<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' height="40%"  /></a>
+<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' width="30%"  /></a>
 
 **Slide Link**: [`slides.sportsdataverse.org/`](https://slides.sportsdataverse.org/)
 
+---
 **The Goals**
 * Creating open-source sports data resources for the community 
 * Making the sports analytics industry more diverse, inclusive, and accessible
@@ -251,7 +252,7 @@ wbb_team_box <- wehoop::load_wbb_team_box(2021)
 wbb_player_box <- wehoop::load_wbb_player_box(2021)
 ```
 
---
+---
 ### NBA
 ```{r hoopR_load_nba, eval = TRUE, out.width = "40%", echo = TRUE}
 nba_pbp <- hoopR::load_nba_pbp(2021)
