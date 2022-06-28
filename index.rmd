@@ -82,18 +82,19 @@ style_mono_light(
 
 The topic of our conversation will be centered around how the SportsDataverse developer group is trying to build lasting solutions for accessing sports data and analytics. 
 
-<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' width="50%"  /></a>
+<a href='https://R.sportsdataverse.org/'><img src='https://raw.githubusercontent.com/sportsdataverse/sportsdataverse-R/main/man/figures/sdv-wall.png' width="50%" align="center"/></a>
 
 **Slide Link**: [`slides.sportsdataverse.org/`](https://slides.sportsdataverse.org/)
 
 ---
-**The Goals**
+### **The Goals**
+
 * Creating open-source sports data resources for the community 
 * Making the sports analytics industry more diverse, inclusive, and accessible
 
 --
 
-**Some Solutions**
+### **Some Solutions**
 
 --
 
@@ -290,8 +291,7 @@ nhl_team_box <- fastRhockey::load_nhl_team_box(2021)
 nhl_player_box <- fastRhockey::load_nhl_player_box(2021)
 ```
 
-### PHF 
- - Premier Hockey Federation
+### PHF (Premier Hockey Federation)
 ```{r fastRhockey_load_phf, eval = TRUE, out.width = "40%", echo = TRUE}
 phf_pbp <- fastRhockey::load_phf_pbp(2021)
 phf_team_box <- fastRhockey::load_phf_team_box(2021)
