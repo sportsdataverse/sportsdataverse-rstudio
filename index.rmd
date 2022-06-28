@@ -7,7 +7,7 @@ opengraph:
     src: "https://raw.githubusercontent.com/saiemgilani/The_SportsDataverse_Initiative/main/figures/sdv-blue.png"
   twitter:
     site: "@sportsdataverse"
-    card: summary_large_image
+    card: summary
     creator: "@saiemgilani"
 output:
   xaringan::moon_reader:
