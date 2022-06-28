@@ -176,6 +176,8 @@ a, a > code {
 }
 img, video, iframe {
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 blockquote {
   border-left: solid 5px #37478580;
