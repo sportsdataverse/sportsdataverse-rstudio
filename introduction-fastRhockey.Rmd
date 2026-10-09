@@ -194,7 +194,7 @@ If you look with `fastRhockey::`, there are more functions available, but those 
 
 To cite the [**`fastRhockey`**](https://benhowell71.github.io/fastRhockey/) R package in publications, use:
 
-BibTex Citation
+BibTeX Citation
 
 ``` bibtex
 @misc{howell_gilani_fastRhockey_2021,
